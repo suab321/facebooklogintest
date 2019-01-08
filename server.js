@@ -1,20 +1,11 @@
-const express=require('express');
+const express=require('express')
 const app=express();
-require('./config');
+const {router}=require("./route.js");
 const passport=require('passport');
-const {router}=require('./route');
-
-
+require('./config.js')
 
 app.use(passport.initialize());
-app.use(passport.session());
 app.use('/facebook',router);
 app.use(express.static('public'));
-app.get('/',(req,res)=>{
-    res.render('index.html');
-})
-app.get('/home',(req,res)=>{
-    res.render('home.html')
-})
-
-app.listen(process.env.NODE||3002);
+app.get('/',(req,res)=>res.render('index.html'));
+app.listen(process.env.PORT||3002);

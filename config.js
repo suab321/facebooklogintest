@@ -1,8 +1,6 @@
-const passport=require('passport');
-const facebook=require("passport-facebook");
-const db=require('./db').fbModel
-const axios=require('axios');
-
+const passport=require('passport')
+const facebook=require('passport-facebook');
+const {db}=require('./db.js');
 
 
 passport.serializeUser((user,done)=>{
@@ -12,7 +10,6 @@ passport.serializeUser((user,done)=>{
 passport.deserializeUser((user,done)=>{
     db.findById({_id:user._id}).then(user=>{done(null,user.id)}).catch(err=>console.log("deserialize"+err))
 })
-
 
 passport.use(new facebook({
     clientID:"226211574927806",
