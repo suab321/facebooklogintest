@@ -12,8 +12,8 @@ passport.deserializeUser((user,done)=>{
 })
 
 passport.use(new facebook({
-    clientID:"226211574927806",
-    clientSecret:"0ded1240686335537a8ed6fa54ed37bf",
+    clientID:"277730989578443",
+    clientSecret:"4b4ec9455f008c11aa8927578de50256",
     callbackURL:"http://localhost:3002/facebook/success"
 },(accessToken,refreshToken,profile,done)=>{
     db.findOne({fbId:profile.id}).then(user=>{
