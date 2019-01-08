@@ -17,4 +17,4 @@ app.get('/home',(req,res)=>{
     res.render('home.html')
 })
 
-app.listen(3002);
+app.listen(process.env.NODE||3002);
