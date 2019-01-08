@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
 
-const mongourl="mongodb://abhi:Suar@123@ds159782.mlab.com:59782/fb_db";
+
+const mongourl="mongodb://abhi980:abhi0796@ds251804.mlab.com:51804/facebookdb";
 
 mongoose.connect(mongourl).catch(err=>console.log(err));
 
